@@ -3,7 +3,7 @@ import pandas
 
 screen = turtle.Screen()
 screen.title("U.S States Game")
-image = "./us-states-game-start/blank_states_img.gif"
+image = "./us-states-game/blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
 turtle.penup()
@@ -17,7 +17,7 @@ turtle.speed(0)
     
 # turtle.onscreenclick(get_mouse_click_coor)
 
-data = pandas.read_csv("./us-states-game-start/50_states.csv")
+data = pandas.read_csv("./us-states-game/50_states.csv")
 states = data.state.to_list()
 value = 0
 entered_states = []
@@ -34,7 +34,7 @@ while value <= 50:
                 #     "State To learn": missing_states
                 # } or
         datas = pandas.DataFrame(missing_states)
-        datas.to_csv("./us-states-game-start/state_to_missing_states.csv")   
+        datas.to_csv("./us-states-game/state_to_missing_states.csv")   
         get_state = data[data.state ==  f"{answer_state}"]
         x_value = get_state.x.to_list()
         y_vlaue = get_state.y.to_list()
